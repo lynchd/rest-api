@@ -1,0 +1,5 @@
+{
+  "email"		:"testuser@testuser.com",
+  "password"	"""" junk, malfomred
+  "name"		:"Test User"
+}
