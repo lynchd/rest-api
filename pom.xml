@@ -55,7 +55,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<repositories>
 		<!-- The JBoss Repo -->
 		<repository>
@@ -78,6 +77,21 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>2.3.1.GA</version>
+		</dependency>
+			<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-spring</artifactId>
+			<version>2.3.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxb-provider</artifactId>
+			<version>2.3.1.GA</version>
+		</dependency>
+		<dependency>
+  			<groupId>javax.inject</groupId>
+  			<artifactId>javax.inject</artifactId>
+  			<version>1</version>
 		</dependency>
 		<!-- Jackson assists with automated mapping from JSON to POJOs -->
 		<dependency>
@@ -111,6 +125,21 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.0.5.RELEASE</version>
 		</dependency>
 	</dependencies>
 </project>

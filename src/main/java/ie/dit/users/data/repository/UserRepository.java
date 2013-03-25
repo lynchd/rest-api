@@ -2,14 +2,15 @@ package ie.dit.users.data.repository;
 
 import java.util.HashMap;
 
+import javax.inject.Named;
+
 import ie.dit.users.exception.UserExistsException;
 import ie.dit.users.exception.UserNotFoundException;
 import ie.dit.users.model.User;
 
+@Named
 public class UserRepository implements IUserRepository
 {
-	private static UserRepository INSTANCE = new UserRepository();
-	
 	private HashMap<String, User> users;
 	
 	private UserRepository() { 
@@ -17,10 +18,6 @@ public class UserRepository implements IUserRepository
 		User seedUser = User.getStockUser();
 		users.put(seedUser.getId(), seedUser);	
 	};
-	
-	public static UserRepository getInstance() {
-		return INSTANCE;
-	}
 	
 	public void saveUser(User user) throws Exception {
 		if(users.containsKey(user.getId()))

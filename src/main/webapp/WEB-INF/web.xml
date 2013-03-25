@@ -5,15 +5,10 @@
 <web-app>
    <display-name>DIT User</display-name>
 
-   <context-param>
-      <param-name>javax.ws.rs.core.Application</param-name>
-      <param-value>ie.dit.users.UsersApplication</param-value>
-   </context-param>
-   
-   <context-param>
-  	  <param-name>resteasy.scan</param-name>
-      <param-value>true</param-value>
-   </context-param>
+  	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:spring-context.xml </param-value>
+	</context-param>
    
    <context-param>
       <param-name>resteasy.servlet.mapping.prefix</param-name>
@@ -25,12 +20,14 @@
          org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
       </listener-class>
    </listener>
+   
+   	<listener>
+		<listener-class>org.jboss.resteasy.plugins.spring.SpringContextLoaderListener</listener-class>
+	</listener>
 
    <servlet>
       <servlet-name>Users</servlet-name>
-      <servlet-class>
-         org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
-      </servlet-class>
+      <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
    </servlet>
 
    <servlet-mapping>

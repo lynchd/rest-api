@@ -1,5 +1,7 @@
 package ie.dit.users.resources;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -12,16 +14,18 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import ie.dit.users.data.repository.UserRepository;
+import ie.dit.users.data.repository.IUserRepository;
 import ie.dit.users.exception.UserNotFoundException;
 import ie.dit.users.model.User;
 import ie.dit.users.model.Validation;
 import ie.dit.users.utilities.Preconditions;
 
+@Named
 @Path("/user")
 public class UserResource 
 {	
-	
+	@Inject
+	private IUserRepository userRepository;
 	/**
 	 * @param authToken 	- Authorization is required
 	 * @param userId		- User ID of the user to fetch
@@ -37,9 +41,8 @@ public class UserResource
 	{
 		Preconditions.throwIfNull(userId);
 		Preconditions.throwNotAuthorizedIfNull(authToken);
-		
-		UserRepository repository = UserRepository.getInstance();
-		User user = repository.findById(userId);
+
+		User user = userRepository.findById(userId);
 		if(user==null) {
 			throw new UserNotFoundException();
 		}
@@ -58,8 +61,7 @@ public class UserResource
 	{
 		Validation.throwIfInvalidUser(user);
 		
-		UserRepository repository = UserRepository.getInstance();
-		repository.saveUser(user);
+		userRepository.saveUser(user);
 		
 		return Response.ok().build();
 	}	
@@ -84,8 +86,7 @@ public class UserResource
 		Validation.throwIfInvalidUser(user);
 		Validation.throwIfNoUserId(user);
 		
-		UserRepository repository = UserRepository.getInstance();
-		repository.updateUser(user);
+		userRepository.updateUser(user);
 		
 		return Response.ok().build();
 	}
@@ -105,8 +106,7 @@ public class UserResource
 		Preconditions.throwNotAuthorizedIfNull(authToken);
 		Preconditions.throwIfNull(userId);
 		
-		UserRepository repository = UserRepository.getInstance();
-		repository.removeUser(userId);
+		userRepository.removeUser(userId);
 		
 		return Response.ok().build();
 	}

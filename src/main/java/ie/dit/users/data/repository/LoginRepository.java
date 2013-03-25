@@ -4,28 +4,28 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.UUID;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import ie.dit.users.exception.UserNotAuthorizedException;
 import ie.dit.users.model.Login;
 import ie.dit.users.model.LoginResponse;
 import ie.dit.users.model.User;
 
+@Named
 public class LoginRepository implements ILoginRepository
 {
-	private HashMap<String, LoginResponse> sessions;
+	@Inject
+	private IUserRepository userRepository;
 	
-	private static LoginRepository INSTANCE = new LoginRepository();
+	private HashMap<String, LoginResponse> sessions;
 	
 	private LoginRepository() {
 		sessions = new HashMap<String, LoginResponse>();
 	}
-	
-	public static LoginRepository getInstance() {
-		return INSTANCE;
-	}
-	
+
 	public LoginResponse login(Login login) {
-		UserRepository userRepo = UserRepository.getInstance();
-		User user = userRepo.findByEmail(login.getEmail());
+		User user = userRepository.findByEmail(login.getEmail());
 		if(user==null || !login.getPassword().equals(user.getPassword())) {
 			throw new UserNotAuthorizedException();
 		}	
