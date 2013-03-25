@@ -3,12 +3,14 @@ package ie.dit.users.data.repository;
 import java.util.HashMap;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import ie.dit.users.exception.UserExistsException;
 import ie.dit.users.exception.UserNotFoundException;
 import ie.dit.users.model.User;
 
 @Named
+@Singleton
 public class UserRepository implements IUserRepository
 {
 	private HashMap<String, User> users;

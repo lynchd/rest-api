@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import ie.dit.users.exception.UserNotAuthorizedException;
 import ie.dit.users.model.Login;
@@ -13,6 +14,7 @@ import ie.dit.users.model.LoginResponse;
 import ie.dit.users.model.User;
 
 @Named
+@Singleton
 public class LoginRepository implements ILoginRepository
 {
 	@Inject
