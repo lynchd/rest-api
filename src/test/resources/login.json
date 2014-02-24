@@ -1,4 +1,4 @@
 {
-  "email"		:"stock@testuser.com",
-  "password"	:"test"
+	"email" : "stock@testuser.com",
+    "password" : "test"
 }

@@ -84,20 +84,17 @@
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
 			<version>1.9.12</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.12</version>
-			<scope>test</scope>
 		</dependency>
 		<!-- Commons IO assists in loading text files -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
-			<scope>test</scope>
 		</dependency>
 		<!--A REST integration test framework. -->
 		<dependency>

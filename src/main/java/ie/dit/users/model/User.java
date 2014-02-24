@@ -1,6 +1,4 @@
 package ie.dit.users.model;
-
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.codehaus.jackson.annotate.JsonIgnore;

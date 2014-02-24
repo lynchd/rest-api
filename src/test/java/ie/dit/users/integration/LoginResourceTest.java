@@ -18,7 +18,7 @@ public class LoginResourceTest
 	public void test_login_givenValidLogin_returnsOkAndAuth() throws Exception 
 	{
 		String request = CannedJSONUtil.loadJSON(CannedJSONUtil.LOGIN);
-		
+		System.out.println(request);
 		String response = 
 		given()
 		   	.request().body(request)

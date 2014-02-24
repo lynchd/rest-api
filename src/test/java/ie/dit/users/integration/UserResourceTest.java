@@ -86,6 +86,7 @@ public class UserResourceTest
 	{
 		String token = getStockAuthToken();
 		String request = CannedJSONUtil.loadJSON(CannedJSONUtil.UPDATE_USER);
+		request = request.replace("?", "1");
 		
 		given()
 	   		.request().body(request)
