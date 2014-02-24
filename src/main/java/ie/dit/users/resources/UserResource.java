@@ -19,7 +19,7 @@ import ie.dit.users.model.Validation;
 import ie.dit.users.utilities.Preconditions;
 
 @Path("/user")
-public class UserResource 
+public class UserResource implements IUserResource
 {	
 	
 	/**

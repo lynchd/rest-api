@@ -13,7 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/login")
-public class LoginResource 
+public class LoginResource implements ILoginResource
 {
 	/**
 	 * @param login			- Credentials
