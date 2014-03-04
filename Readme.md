@@ -70,7 +70,7 @@ Use Postman or CURL to explore the API - e.g to Login
     { "userId":"1","authToken":"fa910e21-7e1e-3726-a9ed-70329b60668d"} 
     ``` 
 Replace the *fudged* persistence layer with a database of your choice. That is, rewrite these. 
-    * https://github.com/lynchd/rest-api/blob/master/src/main/java/ie/dit/users/data/repository/LoginRepository.java
-    * https://github.com/lynchd/rest-api/blob/master/src/main/java/ie/dit/users/data/repository/UserRepository.java
+https://github.com/lynchd/rest-api/blob/master/src/main/java/ie/dit/users/data/repository/LoginRepository.java
+https://github.com/lynchd/rest-api/blob/master/src/main/java/ie/dit/users/data/repository/UserRepository.java
     
     
