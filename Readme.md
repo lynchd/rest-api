@@ -30,7 +30,7 @@ The objective of this exercise is to clone, build and deploy a Restful Web API o
     ```
 * Execute a git clone of this repository
     ```
-    git clone
+    git clone https://github.com/lynchd/rest-api.git
     ```
 * Navigate to the resulting rest-api directory
     ```
@@ -50,7 +50,12 @@ The objective of this exercise is to clone, build and deploy a Restful Web API o
     ```
 * Use Postman or CURL to explore the API - e.g to Login
     ```
-    curl
+    david@ronaldo:~$ curl -d'{
+        "email" : "stock@testuser.com",
+        "password" : "test"
+    }' -H "content-type:application/json" http://localhost:8080/users-1.0/login
+    >>> Response 
+    { "userId":"1","authToken":"fa910e21-7e1e-3726-a9ed-70329b60668d"} 
     ``` 
 * Replace the *fudged* persistence layer with a database of your choice.  
 
