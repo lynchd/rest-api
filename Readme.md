@@ -4,7 +4,7 @@ The objective of this exercise is to clone, build and deploy a Restful Web API o
 
 * Configure your Linux instance on VirtualBox.
 * Install Maven to run from the command line. On Debian/Ubuntu execute.
-    sudo apt-get install maven  
+    '''sudo apt-get install maven ''' 
 * Install JBoss v7.0.2.Final from TAR file. 
     wget http://download.jboss.org/jbossas/7.0/jboss-as-7.0.2.Final/jboss-as-web-7.0.2.Final.tar.gz
 * Extract JBoss
